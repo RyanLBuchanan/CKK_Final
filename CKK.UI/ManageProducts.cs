@@ -19,6 +19,10 @@ namespace CKK.UI
 {
     public partial class ManageProducts : Form
     {
+        // Home Desktop - Final CKKDB
+        SqlConnection Con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog = CKKDB");
+
+
         //public SqlConnection Con { get; private set; }
 
         // Razer Blade laptop
@@ -26,9 +30,6 @@ namespace CKK.UI
 
         //// Home Desktop
         //SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vreed\Documents\CKKdb.mdf;Integrated Security=True;Connect Timeout=30");
-
-        // Home Desktop - Final CKKDB
-        SqlConnection Con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog = CKKDB");
 
         // OTech Desktop
         //SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\4400113921\Documents\CKKdb.mdf;Integrated Security=True;Connect Timeout=30");
