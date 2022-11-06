@@ -19,7 +19,7 @@ namespace CKK.UI
             // Only run the ManageProducts form is login was successful
             //if (login.DialogResult == DialogResult.OK)
             //{
-                Application.Run(new ManageProducts());
+                Application.Run(new SplashForm());
             //}
         }
     }

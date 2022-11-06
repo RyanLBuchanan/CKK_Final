@@ -216,8 +216,10 @@
             this.manageProductsProductIdTextBox.Location = new System.Drawing.Point(280, 600);
             this.manageProductsProductIdTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.manageProductsProductIdTextBox.Name = "manageProductsProductIdTextBox";
+            this.manageProductsProductIdTextBox.ReadOnly = true;
             this.manageProductsProductIdTextBox.Size = new System.Drawing.Size(128, 26);
             this.manageProductsProductIdTextBox.TabIndex = 5;
+            this.manageProductsProductIdTextBox.TabStop = false;
             // 
             // manageProductsProductQuantityTextBox
             // 
