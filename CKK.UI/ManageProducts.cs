@@ -110,7 +110,7 @@ namespace CKK.UI
             try
             {
                 Con.Open();
-                string myQuery = "SELECT * FROM ProductTbl";
+                string myQuery = "SELECT * FROM Products";
                 SqlDataAdapter da = new SqlDataAdapter(myQuery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
@@ -159,7 +159,7 @@ namespace CKK.UI
             {
                 // Insert new product into table
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO ProductTbl VALUES('" + manageProductsProductIdTextBox.Text + "', '" + manageProductsProductNameTextBox.Text + "', '" + manageProductsProductDescriptionTextBox.Text + "', ROUND('" + manageProductsProductPriceTextBox.Text + "', 2), '" + manageProductsProductQuantityTextBox.Text + "', '" + manageProductsProductCategoryComboBox.Text + "');", Con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES('" + manageProductsProductIdTextBox.Text + "', '" + manageProductsProductNameTextBox.Text + "', '" + manageProductsProductDescriptionTextBox.Text + "', ROUND('" + manageProductsProductPriceTextBox.Text + "', 2), '" + manageProductsProductQuantityTextBox.Text + "', '" + manageProductsProductCategoryComboBox.Text + "');", Con);
                 cmd.ExecuteNonQuery();
                 Con.Close();
 
@@ -225,7 +225,7 @@ namespace CKK.UI
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE ProductTbl SET Name = '" + manageProductsProductNameTextBox.Text + "', Description = '" + manageProductsProductDescriptionTextBox.Text + "', Price = '" + manageProductsProductPriceTextBox.Text + "', Quantity = '" + manageProductsProductQuantityTextBox.Text + "', Category = '" + manageProductsProductCategoryComboBox.Text + "' WHERE ID = '" + manageProductsProductIdTextBox.Text + "';", Con);
+                SqlCommand cmd = new SqlCommand("UPDATE Products SET Name = '" + manageProductsProductNameTextBox.Text + "', Description = '" + manageProductsProductDescriptionTextBox.Text + "', Price = '" + manageProductsProductPriceTextBox.Text + "', Quantity = '" + manageProductsProductQuantityTextBox.Text + "', Category = '" + manageProductsProductCategoryComboBox.Text + "' WHERE ID = '" + manageProductsProductIdTextBox.Text + "';", Con);
                 cmd.ExecuteNonQuery();
                 Con.Close();
                 PopulateProductsGridView();
@@ -262,7 +262,7 @@ namespace CKK.UI
             else
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM ProductTbl WHERE ID = '" + manageProductsProductIdTextBox.Text + "';", Con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM Products WHERE ID = '" + manageProductsProductIdTextBox.Text + "';", Con);
                 cmd.ExecuteNonQuery();
                 Con.Close();
                 PopulateProductsGridView();
@@ -274,8 +274,8 @@ namespace CKK.UI
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\vreed\Documents\Persistence\ProductsList.dat")) /**** FOR HOME PC ****/
-            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\ryanl\Documents\Persistence\StoreItems.dat")) /**** FOR RAZER BLADE LAPTOP ****/
+            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\vreed\Documents\Persistence\ProductsList.dat")) /**** FOR HOME PC ****/
+            //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\ryanl\Documents\Persistence\StoreItems.dat")) /**** FOR RAZER BLADE LAPTOP ****/
             //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\4400113921\Desktop\Documents\Persistence\ProductsList.dat")) /**** FOR OTECH PC ****/
             {
                 // Write the header
@@ -451,7 +451,7 @@ namespace CKK.UI
             try
             {
                 Con.Open();
-                string myQuery = "SELECT * FROM ProductTbl WHERE Name = '" + searchNameComboBox.SelectedValue.ToString() + "';";
+                string myQuery = "SELECT * FROM Products WHERE Name = '" + searchNameComboBox.SelectedValue.ToString() + "';";
                 SqlDataAdapter da = new SqlDataAdapter(myQuery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
@@ -471,7 +471,7 @@ namespace CKK.UI
             try
             {
                 Con.Open();
-                string myQuery = "SELECT * FROM ProductTbl WHERE Category = '" + manageProductsSearchComboBox.SelectedValue.ToString() + "';";
+                string myQuery = "SELECT * FROM Products WHERE Category = '" + manageProductsSearchComboBox.SelectedValue.ToString() + "';";
                 SqlDataAdapter da = new SqlDataAdapter(myQuery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
