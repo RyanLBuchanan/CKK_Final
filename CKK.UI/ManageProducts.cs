@@ -164,11 +164,11 @@ namespace CKK.UI
                 Con.Close();
 
                 // Insert new product name into NameTbl for population of Name Filter search
-                Con.Open();
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO NameTbl VALUES('" + manageProductsProductIdTextBox.Text + "', " +
-                "'" + manageProductsProductNameTextBox.Text + "');", Con);
-                cmd1.ExecuteNonQuery();
-                Con.Close();
+                //Con.Open();
+                //SqlCommand cmd1 = new SqlCommand("INSERT INTO NameTbl VALUES('" + manageProductsProductIdTextBox.Text + "', " +
+                //"'" + manageProductsProductNameTextBox.Text + "');", Con);
+                //cmd1.ExecuteNonQuery();
+                //Con.Close();
 
                 PopulateProductsGridView();
                 MessageBox.Show("Product successfully added.");
