@@ -159,7 +159,7 @@ namespace CKK.UI
             {
                 // Insert new product into table
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES('" + manageProductsProductIdTextBox.Text + "', '" + manageProductsProductNameTextBox.Text + "', '" + manageProductsProductDescriptionTextBox.Text + "', ROUND('" + manageProductsProductPriceTextBox.Text + "', 2), '" + manageProductsProductQuantityTextBox.Text + "', '" + manageProductsProductCategoryComboBox.Text + "');", Con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES('" + manageProductsProductNameTextBox.Text + "', '" + manageProductsProductDescriptionTextBox.Text + "', ROUND('" + manageProductsProductPriceTextBox.Text + "', 2), '" + manageProductsProductQuantityTextBox.Text + "', '" + manageProductsProductCategoryComboBox.Text + "');", Con);
                 cmd.ExecuteNonQuery();
                 Con.Close();
 
