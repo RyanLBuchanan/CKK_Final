@@ -22,9 +22,6 @@ namespace CKK.UI
         // Home Desktop - Final CKKDB
         SqlConnection Con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog = CKKDB");
 
-
-        //public SqlConnection Con { get; private set; }
-
         // Razer Blade laptop
         //SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ryanl\Documents\CKKdb.mdf;Integrated Security=True;Connect Timeout=30");
 
@@ -34,24 +31,11 @@ namespace CKK.UI
         // OTech Desktop
         //SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\4400113921\Documents\CKKdb.mdf;Integrated Security=True;Connect Timeout=30");
 
-        //private IStore Store;
-
-        //private FileStore fileStore;
-
-        // Obeject for providing serialization
-        private BinaryFormatter formatter = new BinaryFormatter();
-        private FileStream output;
-
-        // Counter for un-numbered storeItems
-        private int newProductIdCounter = 1;
-
         public ManageProducts()
         {
-            //Store = new Store();
             InitializeComponent(); 
         }
 
-        /**** WORKING CODE FROM TUTORIAL ****/
         // Populate category search drop down combobox
         private void FillCategory()
         {
@@ -92,8 +76,6 @@ namespace CKK.UI
                 dt.Columns.Add("ProductName", typeof(string));
                 rdr = cmd.ExecuteReader();
                 dt.Load(rdr);
-                //manageProductsProductCategoryComboBox.ValueMember = "ProductName";
-                //manageProductsProductCategoryComboBox.DataSource = dt;
                 searchNameComboBox.ValueMember = "ProductName";
                 searchNameComboBox.DataSource = dt;
                 Con.Close();
@@ -104,8 +86,6 @@ namespace CKK.UI
             }
         }
 
-
-        /**** WORKING CODE FROM TUTORIAL ****/
         private void PopulateProductsGridView()
         {
             try
@@ -138,16 +118,6 @@ namespace CKK.UI
 
         private void ManageProducts_Load(object sender, EventArgs e)
         {
-            // Populate products DataGridView
-            //if (fileStore != null)
-            //{
-            //    FileStore fileStore = new FileStore();
-            //    fileStore.Load();
-            //}
-
-            //manageProductsProductIdTextBox.Enabled = false;
-
-            /**** WORKING CODE FROM MYCODESPACE TUTORIAL ****/
             FillCategory();
             FillName();
             PopulateProductsGridView();
@@ -155,7 +125,6 @@ namespace CKK.UI
 
         private void manageProductsAddButton_Click(object sender, EventArgs e)
         {
-            /**** WORKING CODE FROM TUTORIAL ****/
             try
             {
                 // Insert new product into table
@@ -164,6 +133,7 @@ namespace CKK.UI
                 cmd.ExecuteNonQuery();
                 Con.Close();
 
+                /***** WILL THIS ADD PRODUCT NAME - WHAT'S WRONG WITH IT STOPPING THE ADDITION OF NEW PRODUCT???!!! *****/
                 // Insert new product name into NameTbl for population of Name Filter search
                 //Con.Open();
                 //SqlCommand cmd1 = new SqlCommand("INSERT INTO NameTbl VALUES('" + manageProductsProductIdTextBox.Text + "', " +
@@ -176,6 +146,7 @@ namespace CKK.UI
             }
             catch
             {
+
             }
 
             // Clear all TextBoxes for entry of new product data
@@ -275,9 +246,9 @@ namespace CKK.UI
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\vreed\Documents\Persistence\ProductsList.dat")) /**** FOR HOME PC ****/
+            //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\vreed\Documents\Persistence\ProductsList.dat")) /**** FOR HOME PC ****/
             //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\ryanl\Documents\Persistence\StoreItems.dat")) /**** FOR RAZER BLADE LAPTOP ****/
-            //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\4400113921\Desktop\Documents\Persistence\ProductsList.dat")) /**** FOR OTECH PC ****/
+            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\4400113921\Documents\Persistence\ProductsList.dat")) /**** FOR OTECH PC ****/
             {
                 // Write the header
                 streamWriter.WriteLine($"ID\tName\t\tDescription\t\tPrice\tQuantity\tCategory\n");
