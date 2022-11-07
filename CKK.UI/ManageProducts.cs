@@ -214,19 +214,6 @@ namespace CKK.UI
 
         private void manageProductsDeleteButton_Click(object sender, EventArgs e)
         {
-            ///*** WORKING CODE FROM DELIVERABLE 12 ****/
-            //foreach (DataGridViewRow item in this.manageProductsDataGridView.SelectedRows)
-            //{
-            //    manageProductsDataGridView.Rows.RemoveAt(item.Index);
-            //}
-
-            //ClearTextBoxes();
-
-            //MessageBox.Show("Product successfully deleted.");
-
-
-
-            /**** WORKING CODE FROM TUTORIAL ****/
             if (manageProductsProductIdTextBox.Text == "")
             {
                 MessageBox.Show("Enter the product ID.");
@@ -265,12 +252,6 @@ namespace CKK.UI
                         {
                             streamWriter.Write("\t");
                         }
-
-                        // Add $ sign to Price column output
-                        //if (j == 8 /*|| j == 3 || j == 4*/)
-                        //{
-                        //    streamWriter.Write("\t$");
-                        //}
                     }
 
                     if (i != manageProductsDataGridView.Columns.Count - 1)
@@ -280,98 +261,8 @@ namespace CKK.UI
                 }
             }
 
-            //SerializeToPersistence();
-
             MessageBox.Show("Products saved");
         }
-
-
-
-        ///*** WORKING CODE FROM DELIVERABLE 12 ****/
-        //private void SerializeToPersistence() 
-        //{
-        //    /**** FROM TEXTBOOK CHAPTER 17 PAGE 722 ****/
-        //    string[] values = GetTextBoxValues();
-        //    /**** Determine whether DataGridView row is empty ****/
-        //    if (!string.IsNullOrEmpty(values[(int) TextBoxIndices.GuiId]))
-        //    {
-        //        // Store TextBox values in RecordSerializable and serialize it
-        //        try
-        //        {
-        //            // Get ID number value from TextBox
-        //            int guiId = int.Parse(values[(int) TextBoxIndices.GuiId]);
-
-        //            // Determine whether guiId is valid
-        //            if (guiId > 0)
-        //            {
-        //                // RecordSerializable to serialize
-        //                var productRecord = new RecordSerializable(guiId,
-        //                    values[(int) TextBoxIndices.GuiName],
-        //                    values[(int) TextBoxIndices.GuiDescription],
-        //                    decimal.Parse(values[(int) TextBoxIndices.GuiPrice]),
-        //                    int.Parse(values[(int) TextBoxIndices.GuiQuantity]),
-        //                    values[(int) TextBoxIndices.GuiCategory]);
-
-        //                // Write Record to FileStream (serializable object)
-        //                formatter.Serialize(output, productRecord);
-        //            }
-        //            else
-        //            {
-        //                // Notify user if invalid product ID number
-        //                MessageBox.Show("Invalid product ID", "Error",
-        //                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            }
-        //        }
-        //        catch (SerializationException)
-        //        {
-        //            MessageBox.Show("Error writing to File", "Error",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //        catch (FormatException)
-        //        {
-        //            MessageBox.Show("Invalid format", "Error",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
-
-        ///*** WORKING CODE FROM DELIVERABLE 12 ****/
-        //protected int TextBoxCount { get; set; } = 6;  // Number of TextBoxes conributing to new product in DataGridView
-
-        //public enum TextBoxIndices {GuiId, GuiName, GuiDescription, GuiPrice, GuiQuantity, GuiCategory}
-
-        //public void SetTextBoxValues(string[] values)
-        //{
-        //    // Determine whether string array has correct length
-        //    if (values.Length != TextBoxCount)
-        //    {
-        //        // Throw exception if not correct length
-        //        throw (new ArgumentException($"There must be {TextBoxCount} entries in the array", 
-        //            nameof(values)));
-        //    }
-        //    else // Set array values if array has correct length 
-        //    {
-        //        // Set array values to TextBox values
-        //        manageProductsProductIdTextBox.Text = values[(int)TextBoxIndices.GuiId];
-        //        manageProductsProductNameTextBox.Text = values[(int)TextBoxIndices.GuiName];
-        //        manageProductsProductDescriptionTextBox.Text = values[(int)TextBoxIndices.GuiDescription];
-        //        manageProductsProductPriceTextBox.Text = values[(int)TextBoxIndices.GuiPrice];
-        //        manageProductsProductQuantityTextBox.Text = values[(int)TextBoxIndices.GuiQuantity];
-        //        manageProductsProductCategoryComboBox.Text = values[(int)TextBoxIndices.GuiCategory];
-        //    }
-        //}
-
-        //public string[] GetTextBoxValues()
-        //{
-        //    return new string[] {
-        //    manageProductsProductIdTextBox.Text, manageProductsProductNameTextBox.Text,
-        //    manageProductsProductDescriptionTextBox.Text, manageProductsProductPriceTextBox.Text,
-        //    manageProductsProductQuantityTextBox.Text, manageProductsProductCategoryComboBox.Text};
-        //}
-        ///*** ABOVE TO SERIALIZABLETOPERSISTENT() WORKING CODE FROM DELIVERABLE 12 ****/
-        
-        
-
         private void manageProductsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             /**** DATAGRIDVIEW CELL INDICES BELOW SET TO 6-11 TO ACCOUNT FOR DELIVERABLE 12 COLUMNS WHERE VISIBLE SET TO FALSE (INDICES 0-5) ****/
