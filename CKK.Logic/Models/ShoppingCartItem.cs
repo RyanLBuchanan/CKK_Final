@@ -38,7 +38,5 @@ namespace CKK.Logic.Models
         {
             return Product.Price * Quantity;
         }
-
-        //public override string ToString() => $"#{ProductId,-4}  {Product.Name,-30} {$"Quantity: {Quantity:N0}",-13}";
     }
 }
