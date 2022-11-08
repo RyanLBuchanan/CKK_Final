@@ -10,17 +10,7 @@ namespace CKK.UI
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            //Login login = new Login();
-            //Application.Run(login);
-            //Store store = new Store();
-            // Only run the ManageProducts form is login was successful
-            //if (login.DialogResult == DialogResult.OK)
-            //{
-                Application.Run(new SplashForm());
-            //}
+            Application.Run(new SplashForm());
         }
     }
 }

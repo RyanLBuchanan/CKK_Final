@@ -151,44 +151,6 @@ namespace CKK.UI
 
             // Clear all TextBoxes for entry of new product data
             ClearTextBoxes();
-
-
-
-            ///*** WORKING CODE FROM DELIVERABLE 12 ****/
-            //Product newProduct = new Product();
-            //string newProductDescription;
-            //int newProductQuantity;
-            //string productCategory;
-
-            //// If no product exists of that id, give new id
-            //newProduct.Id = newProductIdCounter++; // Add new product ID from counter
-            //newProduct.Name = manageProductsProductNameTextBox.Text; // Give product a name
-            //newProductDescription = manageProductsProductDescriptionTextBox.Text;
-            //newProduct.Price = decimal.Parse(manageProductsProductPriceTextBox.Text); // Give product a price
-            //newProductQuantity = int.Parse(manageProductsProductQuantityTextBox.Text);
-            //productCategory = manageProductsProductCategoryComboBox.Text;
-
-            //// Add new product to DataGridView
-            //DataGridViewRow row = (DataGridViewRow)manageProductsDataGridView.Rows[0].Clone();
-            //row.Cells[0].Value = newProduct.Id;
-            //row.Cells[1].Value = newProduct.Name;
-            //row.Cells[2].Value = newProductDescription;
-            //row.Cells[3].Value = newProduct.Price;
-            //row.Cells[4].Value = newProductQuantity;
-            //row.Cells[5].Value = productCategory;
-            //manageProductsDataGridView.Rows.Add(row);
-
-
-            //FileStore fileStore = new FileStore();
-            //fileStore.Save(newProduct, newProductDescription, newProductQuantity);
-
-            //// Notify user of correctly added product
-            //MessageBox.Show($"Product successfully added.\n" +
-            //                $"\nID:\t\t{newProduct.Id,10:D3}\n" +
-            //                $"Name:\t\t{newProduct.Name,10}\n" +
-            //                $"Description:\t{newProductDescription,10}\n" +
-            //                $"Price:\t\t{newProduct.Price,10:C}\n" +
-            //                $"Quantity:\t\t{newProductQuantity,10}\n");
         }
 
         private void manageProductsEditButton_Click(object sender, EventArgs e)
@@ -234,8 +196,8 @@ namespace CKK.UI
         private void saveButton_Click(object sender, EventArgs e)
         {
             //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\vreed\Documents\Persistence\ProductsList.dat")) /**** FOR HOME PC ****/
-            //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\ryanl\Documents\Persistence\StoreItems.dat")) /**** FOR RAZER BLADE LAPTOP ****/
-            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\4400113921\Documents\Persistence\ProductsList.dat")) /**** FOR OTECH PC ****/
+            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\ryanl\Documents\Persistence\StoreItems.dat")) /**** FOR RAZER BLADE LAPTOP ****/
+            //using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\4400113921\Documents\Persistence\ProductsList.dat")) /**** FOR OTECH PC ****/
             {
                 // Write the header
                 streamWriter.WriteLine($"ID\tName\t\tDescription\t\tPrice\tQuantity\tCategory\n");
